@@ -27,9 +27,9 @@ router.post("/login", async (req, res) => {
 
     // Compare entered password with stored hash
     const isMatch = await bcrypt.compare(password, adminUser.passwordHash);
-    console.log("Entered password:", password);
-    console.log("Stored hash:", adminUser.passwordHash);
-    console.log("Password match:", isMatch);
+
+    // admin@example.con
+    // password123
 
     if (!isMatch) {
       return res

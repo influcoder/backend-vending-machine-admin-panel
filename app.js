@@ -7,6 +7,7 @@ import authRoutes from "./routes/authRoutes.js";
 import connectDB from "./config/db.js";
 import vendingMachinesRoutes from "./routes/vendingMachinesRoutes.js";
 import slotRoutes from "./routes/slotRoutes.js";
+import payment from "./routes/payment.js";
 
 dotenv.config();
 
@@ -18,10 +19,11 @@ app.use(cors({ origin: "http://localhost:5173" }));
 app.use(bodyParser.json());
 
 // Use routes
-app.use("/api/order", orderRoutes);
+// app.use("/api/order", orderRoutes);
 app.use("/api/adminAuth", authRoutes);
 app.use("/api/vendingMachines", vendingMachinesRoutes);
 app.use("/api/slots", slotRoutes);
+app.use("/api/payment", payment);
 
 app.listen(5000, () => {
   console.log("Server running on http://localhost:5000");
