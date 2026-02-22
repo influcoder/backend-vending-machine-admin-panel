@@ -1,13 +1,15 @@
-import express from "express";
 import dotenv from "dotenv";
+import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import razorpay from "./config/razorpay.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import connectDB from "./config/db.js";
 import vendingMachinesRoutes from "./routes/vendingMachinesRoutes.js";
 import slotRoutes from "./routes/slotRoutes.js";
 import payment from "./routes/payment.js";
+import customerRoutes from "./routes/customer.routes.js";
 
 dotenv.config();
 
@@ -44,6 +46,7 @@ app.use("/api/adminAuth", authRoutes);
 app.use("/api/vendingMachines", vendingMachinesRoutes);
 app.use("/api/slots", slotRoutes);
 app.use("/api/payment", payment);
+app.use("/api/customers", customerRoutes);
 
 app.listen(5000, () => {
   console.log("Server running on http://localhost:5000");
