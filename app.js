@@ -21,6 +21,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://vendotea.netlify.app",
   "https://www.vendotea.netlify.app",
+  "https://vending-machine-adminpanel.netlify.app",
 ];
 
 app.use(
